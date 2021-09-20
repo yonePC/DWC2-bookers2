@@ -1,0 +1,29 @@
+<div class="container">
+<div class="row">
+<div class="col-3">
+  <%= render "books/side", user: current_user, book: @newbook %>
+</div>
+
+<div class="col-8">
+
+<h1>Book</h1>
+<table>
+  <tr>
+    <th></th>
+    <th>Title</th>
+    <th>Opinion</th>
+  </tr>
+  <tr>
+    <% @books.each do |book| %>
+    <td>
+      <%= attachment_image_tag @user, :profile_image_id, :fill, 100, 100, format: 'jpg', fallback: "no_image.jpg" %>
+    </td>
+    <td><%= book.title %></td>
+    <td><%= book.body %></td>
+    <% end %>
+  </tr>
+</table>
+
+</div>
+</div>
+</div>
