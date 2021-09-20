@@ -1,2 +1,28 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <%= render "books/side", user: @user, book: @newbook %>
+    </div>
+
+    <div class="col-8">
+      <h1>Books</h1>
+      <table class="table">
+        <tr>
+          <th></th>
+          <th>Title</th>
+          <th>Opinion</th>
+        </tr>
+
+        <% @user.books.each do |book| %>
+        <tr>
+          <td>
+            <%= attachment_image_tag @user, :profile_image_id, :fill, 10, 10, format: 'jpg', fallback: "no-image-icon" %>
+          </td>
+          <td><%= link_to book.title, book_path(book) %></td>
+          <td><%= book.body %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
