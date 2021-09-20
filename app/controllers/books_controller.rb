@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   def index
+
   end
 
   def show
@@ -7,4 +8,9 @@ class BooksController < ApplicationController
 
   def edit
   end
+
+  private
+  def book_params
+  end
 end
+
