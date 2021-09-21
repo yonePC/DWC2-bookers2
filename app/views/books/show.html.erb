@@ -1,10 +1,10 @@
 <div class="container">
   <div class="row">
-    <div class="col-3">
+    <div class="col-md-3">
       <%= render "books/side", user: @book.user, book: @newbook %>
     </div>
 
-    <div class="col-8">
+    <div class="col-md-8 offset-md-1">
       <h1>Book detail</h1>
       <table class="table">
         <!--<tr>-->
@@ -24,12 +24,15 @@
           </td>
           <td><%= @book.title %></td>
           <td><%= @book.body %></td>
+
+          <% if @book.user == current_user %>
           <td>
             <%= link_to 'Edit', edit_book_path(@book), class: 'btn btn-success' %>
           </td>
           <td>
             <%= link_to 'Destroy', book_path(@book), method: :delete, data: {confirm: '本当に削除しますか？' }, class: 'btn btn-danger' %>
           </td>
+          <% end %>
         </tr>
 
       </table>
