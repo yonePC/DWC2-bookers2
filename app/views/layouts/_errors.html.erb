@@ -1,0 +1,8 @@
+<% if book.errors.any? %>
+<div style="color: red">
+  <%= pluralize(book.errors.count, "error") %>
+  <% book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</div>
+<% end %>

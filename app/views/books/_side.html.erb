@@ -21,6 +21,7 @@
 </div>
 
 <h2>New Book</h2>
+  <%= render 'layouts/errors', book: @newbook %>
   <%= form_with  model:book,local:true do |f|  %>
   <div class="form-group">
     <%= f.label :title %>

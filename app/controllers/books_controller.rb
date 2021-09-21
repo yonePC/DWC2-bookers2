@@ -19,6 +19,7 @@ class BooksController < ApplicationController
       flash[:success] = "successfully"
       redirect_to books_path
     else
+      @books = Book.all
       render :index
     end
   end
